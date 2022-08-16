@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+         #test{
+            width: 500px;
+            height: 400px;
+            margin: 0px auto;
+         }
+        </style>
+        <script type="text/javascript">
+            function display(){
+                var canvas = document.getElementById('mycanvas');
+                if(canvas.getContext){
+                    var ctx=canvas.getContext('2d');
+                    for(let i=25;i<=250;i=i+25){
+                        for(let j=25;j<=700;j=j+25){
+                            var cr='rgb('+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+')';
+                            ctx.fillStyle=cr;
+                            ctx.fillRect(i,j,30,30);
+                        }
+                    }
+                }else{
+                    alert('browser not supported');
+                }
+            }
+        </script>
+    </head>
+    <body id="test" onload="display()">
+     <h1 style="text-align: center;"> Color Checker Board</h1>
+     <div style="text-align: center;">
+        <canvas   id="mycanvas">  
+
+        </canvas>
+     </div>
+    
+    </body>
+    </html>
